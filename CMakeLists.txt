@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(ip_filter VERSION 0.0.1$ENV{TRAVIS_BUILD_NUMBER})
+project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 # set(
 #     CMAKE_CXX_CPPCHECK
