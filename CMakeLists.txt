@@ -1,6 +1,11 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 project(ip_filter VERSION 0.0.1$ENV{TRAVIS_BUILD_NUMBER})
+
+# set(
+#     CMAKE_CXX_CPPCHECK
+#     "cppcheck -q --library=std --suppress=missingIncludeSystem --enable=all --inconclusive -x c++ --std=c++20 ../src"
+# )
 
 add_executable(ip_filter src/ip_filter.cpp)
 
