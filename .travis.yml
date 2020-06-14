@@ -2,7 +2,7 @@ dist: bionic
 language: cpp
 compiler: g++-8
 script:
-- CXX=g++-8 cmake
+- CXX=g++-8 cmake .
 - cmake --build .
 - cmake --build . --target test
 - cmake --build . --target package
