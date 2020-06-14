@@ -2,6 +2,7 @@ dist: bionic
 language: cpp
 compiler: g++-8
 script:
+- apt install g++-8
 - CXX=g++-8 cmake .
 - cmake --build .
 - cmake --build . --target test
