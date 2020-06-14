@@ -1,0 +1,13 @@
+dist: bionic
+language: cpp
+compiler: g++-8
+script:
+- CXX=g++-8 cmake
+- cmake --build .
+- cmake --build . --target test
+- cmake --build . --target package
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - curl -f -T ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ulepota:$BINTRAY_API_KEY "https://api.bintray.com/content/944/otus-cpp/homework/$TRAVIS_BUILD_NUMBER/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=bionic;deb_component=main;deb_architecture=amd64;publish=1"
